@@ -1,6 +1,6 @@
 {
   "name": "testing-yolo",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "A demo package ",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
