@@ -1,6 +1,6 @@
 {
   "name": "testing-yolo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A demo package ",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -24,10 +24,13 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "prepublishOnly": "pnpm run ci",
+    "local-release": "pnpm changeset version && changeset publish",
     "lint": "tsc"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.4",
+    "@changesets/cli": "^2.27.7",
     "@types/figlet": "^1.5.8",
     "figlet": "^1.7.0",
     "prettier": "^3.3.3",
