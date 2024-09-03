@@ -1,0 +1,45 @@
+{
+  "name": "testing-yolo",
+  "version": "1.0.0",
+  "description": "A demo package ",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "keywords": [
+    "demo",
+    "typescript"
+  ],
+  "homepage": "https://github.com/andreszapatavff/testing-yolo",
+  "author": "Andres Zapata",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "udm"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "dev": "vitest",
+    "build": "tsup",
+    "ci": "pnpm run build && pnpm run check-format && pnpm run check-exports && pnpm run lint && pnpm run test",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
+    "@types/figlet": "^1.5.8",
+    "figlet": "^1.7.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  }
+}
