@@ -20,12 +20,12 @@
     "test": "vitest run",
     "dev": "vitest",
     "build": "tsup",
-    "ci": "pnpm run build && pnpm run check-format && pnpm run check-exports && pnpm run lint && pnpm run test",
+    "ci": "pnpm run build && pnpm run check-format && pnpm run check-exports && pnpm run lint && pnpm run test && pnpm run release",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "prepublishOnly": "pnpm run ci",
-    "local-release": "pnpm changeset version && changeset publish",
+    "release": "pnpm changeset version && changeset publish",
     "lint": "tsc"
   },
   "devDependencies": {
