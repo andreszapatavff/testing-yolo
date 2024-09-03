@@ -37,4 +37,4 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
           pnpm changeset version
-          changeset publish
+          pnpm changeset publish
