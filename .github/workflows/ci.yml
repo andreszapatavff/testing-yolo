@@ -32,3 +32,9 @@ jobs:
 
       - name: Run CI
         run: npm run ci
+
+      - name: Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          pnpm changeset version
+          changeset publish
